@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 3878682}
   - component: {fileID: 3878681}
   m_Layer: 0
-  m_Name: cave-bg-01-completo
+  m_Name: cave Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
