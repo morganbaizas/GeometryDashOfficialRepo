@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class dinosaur : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody2D playerRb;
+    private float x = 3f;
+    public bool touchingGround = true;
+
+
     void Start()
     {
-        
+        playerRb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && touchingGround)
+        {
+            playerRb.AddForce(Vector3.up * x, ForceMode2D.Impulse);
+        }
     }
 }
