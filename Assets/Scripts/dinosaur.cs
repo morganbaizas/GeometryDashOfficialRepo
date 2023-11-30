@@ -5,7 +5,7 @@ using UnityEngine;
 public class dinosaur : MonoBehaviour
 {
     private Rigidbody2D playerRb;
-    private float x = 3f;
+    private float x = 10f;
     public bool touchingGround = true;
 
 
@@ -20,7 +20,15 @@ public class dinosaur : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && touchingGround)
         {
-            playerRb.AddForce(Vector3.up * x, ForceMode2D.Impulse);
+            playerRb.AddForce(Vector2.up * x, ForceMode2D.Impulse);
+            touchingGround = false;
         }
+    }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        touchingGround = true;
     }
 }
