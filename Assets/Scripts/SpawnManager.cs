@@ -9,31 +9,20 @@ public class SpawnManager : MonoBehaviour
     public GameObject platformPrefab;
     private Vector2 spawnPosition;
     private float startDelay = 0;
-    private float repeatRate = 2;
-    private int random;
-
-    // Start is called before the first frame update
+    private float repeatRate = 1;
+    
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (platformPrefab)
-        {
-            random = (rnd.Next(0, 5)) - 4;
-            spawnPosition = new Vector2(25, random);
-        }
-        else
-        {
-            random = (rnd.Next(1, 5) - 4);
-            spawnPosition = new Vector2(25, random);
-        }
+
     }
 
     void SpawnObstacle() {
-        Instantiate(platformPrefab, new Vector2(25, (rnd.Next(1, 5) - 4)), platformPrefab.transform.rotation);
+        spawnPosition = new Vector3((rnd.Next(15) - 7), (rnd.Next(7) - 4), 0);
+        Instantiate(platformPrefab, spawnPosition, platformPrefab.transform.rotation);
     }
 }
