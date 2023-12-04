@@ -9,8 +9,7 @@ public class RepeatBackground : MonoBehaviour
     // private float repeatPlace;
     private MeshRenderer _backgroundMeshRenderer;
     private Vector2 _textureOffset = Vector2.zero;
-    [SerializeField] private float _speed = 1f;
-    private float waitTime = 200;
+    [SerializeField] private float _speed = 0.15f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +20,13 @@ public class RepeatBackground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // if (transform.position.x < startPosition.x - repeatPlace)
         // {
         //     transform.position = startPosition;
         // }
-        if (waitTime > 0) {
-            waitTime--;
-        }
-        else
-        {
-            _textureOffset.x += _speed * Time.deltaTime;
-            _backgroundMeshRenderer.material.mainTextureOffset = _textureOffset;
-        }
+        _textureOffset.x += _speed * Time.deltaTime;
+        _backgroundMeshRenderer.material.mainTextureOffset = _textureOffset;
     }
 }

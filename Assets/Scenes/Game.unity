@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbf58f6a931641e18b6c80f0cde473e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.5
+  _speed: 0.1
 --- !u!1 &806399545
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -626,6 +626,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 687941196}
+--- !u!50 &1401278349
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401278345}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1938948688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,6 +713,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8926391785445267074, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926391785445267074, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -694,33 +729,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 192173085}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
---- !u!50 &1401278349
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401278345}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &3976550283534374756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -783,11 +791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4460209760716413201, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 3.121439
       objectReference: {fileID: 0}
     - target: {fileID: 4460209760716413201, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 0.6138586
       objectReference: {fileID: 0}
     - target: {fileID: 4460209760716413201, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_Enabled
@@ -799,7 +807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4460209760716413201, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_Offset.y
-      value: 1.7
+      value: 0.0069293976
       objectReference: {fileID: 0}
     - target: {fileID: 4460209760716413201, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_IsTrigger
@@ -816,6 +824,14 @@ PrefabInstance:
     - target: {fileID: 8926391785445267074, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
       propertyPath: m_Name
       value: platform1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926391785445267074, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926391785445267074, guid: 6c2bc589cdbaf4a30aadf87d05d7b8e1, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
