@@ -5,25 +5,14 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
 
-    private float speed = 5;
-    // private float waitTime = 200f;
-
-    // Start is called before the first frame update
+    private float speed = 3;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        // if (waitTime > 0)
-        // {
-        //     waitTime--;
-        // }
-        // else
-        // {
-            transform.Translate(Vector2.left * Time.deltaTime * speed);
-        // }
+        transform.Translate(Vector2.left * Time.deltaTime * speed);
     }
 }

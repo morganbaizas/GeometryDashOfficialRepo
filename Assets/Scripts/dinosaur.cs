@@ -7,6 +7,7 @@ public class dinosaur : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     private float x = 10f;
+    private float speed = 3f;
     public bool touchingGround = true;
 
     void Start()
@@ -16,13 +17,14 @@ public class dinosaur : MonoBehaviour
 
     void Update()
     {
+        transform.Translate(speed * Time.deltaTime, 0, 0);
         if (Input.GetKeyDown(KeyCode.Space) && touchingGround)
         {
             playerRb.AddForce(Vector2.up * x, ForceMode2D.Impulse);
             touchingGround = false;
         }
 
-        if (transform.position.y < -4.5)
+        if (transform.position.y < -4.5 || transform.position.x < -9)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("DiedScene");
