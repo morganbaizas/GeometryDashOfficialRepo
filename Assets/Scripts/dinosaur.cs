@@ -8,13 +8,10 @@ public class dinosaur : MonoBehaviour
     private float x = 10f;
     public bool touchingGround = true;
 
-
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
     }
-
-
 
     void Update()
     {
@@ -24,8 +21,6 @@ public class dinosaur : MonoBehaviour
             touchingGround = false;
         }
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
