@@ -12,7 +12,7 @@ public class RepeatBackground : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        repeatPlace = GetComponent<BoxCollider2D>().size.x.CompareTo(12);
+        repeatPlace = (GetComponent<BoxCollider2D>().size.x / 2) + 40;
     }
 
     // Update is called once per frame
