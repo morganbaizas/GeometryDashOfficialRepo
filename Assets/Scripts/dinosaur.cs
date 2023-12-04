@@ -11,7 +11,6 @@ public class dinosaur : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(BufferTimeCoroutine());
         playerRb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,11 +30,5 @@ public class dinosaur : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         touchingGround = true;
-    }
-
-    IEnumerator BufferTimeCoroutine()
-    {
-        yield return new WaitForSeconds(5);
-
     }
 }
