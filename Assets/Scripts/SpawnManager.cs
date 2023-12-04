@@ -10,7 +10,9 @@ public class SpawnManager : MonoBehaviour
     private Vector2 spawnPosition;
     private float startDelay = 0;
     private float repeatRate = 2;
+    private int random;
 
+    /*
     if (platformPrefab)
     {
         random = (rnd.Next(0, 5)) - 4;
@@ -20,6 +22,7 @@ public class SpawnManager : MonoBehaviour
         random = (rnd.Next(1, 5) - 4);
         spawnPosition = new Vector2(25, random);
     }
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,16 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (platformPrefab)
+        {
+            random = (rnd.Next(0, 5)) - 4;
+            spawnPosition = new Vector2(25, random);
+        }
+        else
+        {
+            random = (rnd.Next(1, 5) - 4);
+            spawnPosition = new Vector2(25, random);
+        }
     }
 
     void SpawnObstacle() {
