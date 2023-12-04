@@ -24,7 +24,7 @@ public class dinosaur : MonoBehaviour
             touchingGround = false;
         }
 
-        if (transform.position.y < -4.5 || transform.position.x < -9)
+        if (transform.position.y < -4.5 || transform.position.x < -8.75)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("DiedScene");
