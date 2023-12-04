@@ -11,15 +11,15 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 0;
     private float repeatRate = 2;
 
-    if (platformPrefab)
-    {
-        random = (rnd.Next(0, 5)) - 4;
-        spawnPosition = new Vector2(25, random);
-    } else
-    {
-        random = (rnd.Next(1, 5) - 4);
-        spawnPosition = new Vector2(25, random);
-    }
+    // if (platformPrefab)
+    // {
+    //     random = (rnd.Next(0, 5)) - 4;
+    //     spawnPosition = new Vector2(25, random);
+    // } else
+    // {
+    //     random = (rnd.Next(1, 5) - 4);
+    //     spawnPosition = new Vector2(25, random);
+    // }
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,6 @@ public class SpawnManager : MonoBehaviour
     }
 
     void SpawnObstacle() {
-        Instantiate(platformPrefab, spawnPosition, platformPrefab.transform.rotation);
+        Instantiate(platformPrefab, new Vector2(25, (rnd.Next(1, 5) - 4)), platformPrefab.transform.rotation);
     }
 }
