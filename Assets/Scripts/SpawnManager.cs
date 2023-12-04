@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     private Vector2 spawnPosition;
     private float startDelay = 0;
     private float repeatRate = 0.5f;
+    private float waitTime = 200f;
     
     void Start()
     {
