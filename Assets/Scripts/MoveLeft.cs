@@ -6,7 +6,7 @@ public class MoveLeft : MonoBehaviour
 {
 
     private float speed = 5;
-    private float waitTime = 200f;
+    // private float waitTime = 200f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +17,13 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (waitTime > 0)
-        {
-            waitTime--;
-        }
-        else
-        {
+        // if (waitTime > 0)
+        // {
+        //     waitTime--;
+        // }
+        // else
+        // {
             transform.Translate(Vector2.left * Time.deltaTime * speed);
-        }
+        // }
     }
 }

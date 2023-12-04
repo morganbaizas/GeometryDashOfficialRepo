@@ -10,7 +10,7 @@ public class RepeatBackground : MonoBehaviour
     private MeshRenderer _backgroundMeshRenderer;
     private Vector2 _textureOffset = Vector2.zero;
     [SerializeField] private float _speed = 0.15f;
-    private float waitTime = 200;
+    // private float waitTime = 200;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +28,18 @@ public class RepeatBackground : MonoBehaviour
         //     transform.position = startPosition;
         // }
 
-        if (waitTime > 0)
-        {
-            waitTime--;
-        }
-        else
-        {
-            _textureOffset.x += _speed * Time.deltaTime;
-            _backgroundMeshRenderer.material.mainTextureOffset = _textureOffset;
-        }
+        // if (waitTime > 0)
+        // {
+        //     waitTime--;
+        // }
+        // else
+        // {
+        //     _textureOffset.x += _speed * Time.deltaTime;
+        //     _backgroundMeshRenderer.material.mainTextureOffset = _textureOffset;
+        // }
+
+        _textureOffset.x += _speed * Time.deltaTime;
+        _backgroundMeshRenderer.material.mainTextureOffset = _textureOffset;
         
     }
 }
