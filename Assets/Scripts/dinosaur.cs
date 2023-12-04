@@ -9,6 +9,7 @@ public class dinosaur : MonoBehaviour
     private float x = 10f;
     private float speed = 3f;
     public bool touchingGround = true;
+    private float outOfBounds = -8;
 
     void Start()
     {
@@ -25,6 +26,12 @@ public class dinosaur : MonoBehaviour
         }
 
         if (transform.position.y < -4.5 || transform.position.x < -8.75)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("DiedScene");
+        }
+
+        if (transform.position.x < outOfBounds)
         {
             Destroy(gameObject);
             SceneManager.LoadScene("DiedScene");
