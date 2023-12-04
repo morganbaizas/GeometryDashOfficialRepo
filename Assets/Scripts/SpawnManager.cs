@@ -11,15 +11,23 @@ public class SpawnManager : MonoBehaviour
     private Vector2 spawnPosition;
     private float startDelay = 0;
     private float repeatRate = 0.5f;
+    private float waitTime = 200f;
     
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        // InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
+        if (waitTime > 0)
+        {
+            waitTime--;
+        }
+        else
+        {
+            InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        }
     }
 
     void SpawnObstacle() {

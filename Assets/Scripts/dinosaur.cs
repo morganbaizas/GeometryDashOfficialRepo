@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class dinosaur : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class dinosaur : MonoBehaviour
         {
             playerRb.AddForce(Vector2.up * x, ForceMode2D.Impulse);
             touchingGround = false;
+        }
+
+        if (transform.position.y < -4.5)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("DiedScene");
         }
     }
 
