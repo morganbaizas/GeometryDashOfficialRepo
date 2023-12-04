@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     private static readonly Random rnd = new Random();
     public GameObject platformPrefab;
+    public GameObject rockPrefab;
     private Vector2 spawnPosition;
     private float startDelay = 0;
     private float repeatRate = 0.5f;
@@ -32,6 +33,10 @@ public class SpawnManager : MonoBehaviour
         // }
         // spawnPosition = new Vector3(xPos, yPos, 0);
         Instantiate(platformPrefab, spawnPosition, platformPrefab.transform.rotation);
-        platformPrefab.layer = 1;
+
+        xPos = (rnd.Next(15) - 4);
+        yPos = (rnd.Next(7) - 4);
+        spawnPosition = new Vector3(xPos, yPos, 0);
+        Instantiate(rockPrefab, spawnPosition, rockPrefab.transform.rotation);
     }
 }
